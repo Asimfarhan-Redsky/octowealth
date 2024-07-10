@@ -1,0 +1,13 @@
+diff --git a/node_modules/form-data/lib/form_data.js b/node_modules/form-data/lib/form_data.js
+index cf836b0..9316442 100644
+--- a/node_modules/form-data/lib/form_data.js
++++ b/node_modules/form-data/lib/form_data.js
+@@ -60,7 +60,7 @@ FormData.prototype.append = function(field, value, options) {
+   }
+ 
+   // https://github.com/felixge/node-form-data/issues/38
+-  if (util.isArray(value)) {
++  if (Array.isArray(value)) {
+     // Please convert your array into string
+     // the way web server expects it
+     this._error(new Error('Arrays are not supported.'));

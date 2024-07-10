@@ -1,0 +1,83 @@
+diff --git a/node_modules/whatwg-url/lib/url-state-machine.js b/node_modules/whatwg-url/lib/url-state-machine.js
+index c25dbc2..4b89a3b 100644
+--- a/node_modules/whatwg-url/lib/url-state-machine.js
++++ b/node_modules/whatwg-url/lib/url-state-machine.js
+@@ -1,6 +1,6 @@
+ "use strict";
+-const punycode = require("punycode");
+-const tr46 = require("tr46");
++// const punycode = require("punycode");
++// const tr46 = require("tr46");
+ 
+ const specialSchemes = {
+   ftp: 21,
+@@ -15,7 +15,8 @@ const specialSchemes = {
+ const failure = Symbol("failure");
+ 
+ function countSymbols(str) {
+-  return punycode.ucs2.decode(str).length;
++  return 0;
++  // punycode.ucs2.decode(str).length;
+ }
+ 
+ function at(input, idx) {
+@@ -231,7 +232,8 @@ function parseIPv6(input) {
+   let compress = null;
+   let pointer = 0;
+ 
+-  input = punycode.ucs2.decode(input);
++  input = "";
++  // punycode.ucs2.decode(input);
+ 
+   if (input[pointer] === 58) {
+     if (input[pointer + 1] !== 58) {
+@@ -398,7 +400,8 @@ function parseHost(input, isSpecialArg) {
+   }
+ 
+   const domain = utf8PercentDecode(input);
+-  const asciiDomain = tr46.toASCII(domain, false, tr46.PROCESSING_OPTIONS.NONTRANSITIONAL, false);
++  const asciiDomain = "";
++  // tr46.toASCII(domain, false, tr46.PROCESSING_OPTIONS.NONTRANSITIONAL, false);
+   if (asciiDomain === null) {
+     return failure;
+   }
+@@ -421,7 +424,8 @@ function parseOpaqueHost(input) {
+   }
+ 
+   let output = "";
+-  const decoded = punycode.ucs2.decode(input);
++  const decoded = "";
++  //  punycode.ucs2.decode(input);
+   for (let i = 0; i < decoded.length; ++i) {
+     output += percentEncodeChar(decoded[i], isC0ControlPercentEncode);
+   }
+@@ -552,7 +556,8 @@ function URLStateMachine(input, base, encodingOverride, url, stateOverride) {
+   this.arrFlag = false;
+   this.passwordTokenSeenFlag = false;
+ 
+-  this.input = punycode.ucs2.decode(this.input);
++  this.input = "";
++  // punycode.ucs2.decode(this.input);
+ 
+   for (; this.pointer <= this.input.length; ++this.pointer) {
+     const c = this.input[this.pointer];
+@@ -1265,7 +1270,8 @@ module.exports.basicURLParse = function (input, options) {
+ 
+ module.exports.setTheUsername = function (url, username) {
+   url.username = "";
+-  const decoded = punycode.ucs2.decode(username);
++  const decoded = "";
++  // punycode.ucs2.decode(username);
+   for (let i = 0; i < decoded.length; ++i) {
+     url.username += percentEncodeChar(decoded[i], isUserinfoPercentEncode);
+   }
+@@ -1273,7 +1279,8 @@ module.exports.setTheUsername = function (url, username) {
+ 
+ module.exports.setThePassword = function (url, password) {
+   url.password = "";
+-  const decoded = punycode.ucs2.decode(password);
++  const decoded = "";
++  // punycode.ucs2.decode(password);
+   for (let i = 0; i < decoded.length; ++i) {
+     url.password += percentEncodeChar(decoded[i], isUserinfoPercentEncode);
+   }
