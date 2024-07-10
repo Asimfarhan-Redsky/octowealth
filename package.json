@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "plaid": "^18.0.0",
+    "react-native-webview": "^13.6.2"
+  }
+}
