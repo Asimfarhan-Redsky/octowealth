@@ -7,6 +7,8 @@ import {
 } from "react-native-vector-icons";
 
 // ScreensName
+const test = "thanks";
+const test2 = "thanks2";
 export const WELCOME_SCREEN = "Welcome";
 export const LOGIN_SCREEN = "Login";
 export const SIGNUP_SCREEN = "SignUp";
