@@ -8,7 +8,7 @@ import {
 
 // ScreensName
 const test = "thanks";
-const test2 = "thanks5";
+const test2 = "thanks6";
 export const WELCOME_SCREEN = "Welcome";
 export const LOGIN_SCREEN = "Login";
 export const SIGNUP_SCREEN = "SignUp";
