@@ -31,6 +31,7 @@ export const INVESTMENT_DETAILS = "InvestmentDetails";
 export const TAX_INFO_SCREEN = "TaxIfoScreen";
 export const TAX_PREVIEW_SCREEN = "TaxPreviewScreen";
 export const TRANSSACTION_HISTORY = "Transaction History";
+export const BILL_MANAGEMENT_SCREEN = "BillManagementScreen";
 
 
 
@@ -165,6 +166,7 @@ export const RENT = 'Rent';
 export const TRANSACTIONS = 'Transactions';
 export const BUDGET_ANALYSIS = 'Budget Analysis';
 export const SEE_ALL = 'See All';
+export const BILL_MANAGEMENT = "Bill Management";
 
 
 

@@ -41,6 +41,7 @@ import {
 } from "../constants/colors";
 import {
   ACCOUNT_OVERVIEW_STACK_SCREEN,
+  BILL_MANAGEMENT_SCREEN,
   HOME_SCREEN,
   INVESTMENT_DASHBOARD,
   TAX_INFO_SCREEN,
@@ -111,6 +112,9 @@ const CustomDrawerContent = (props) => {
         break;
       case "Transactions":
         navigation.navigate(TRANSSACTION_HISTORY);
+        break;
+        case "Bills": 
+        navigation.navigate(BILL_MANAGEMENT_SCREEN);
         break;
       default:
         break;

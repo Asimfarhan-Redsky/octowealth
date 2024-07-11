@@ -12,15 +12,14 @@ import {
   whiteColor,
 } from "../constants/colors";
 import { spacings } from "../shared/constants/fonts";
-import {
-  heightPercentageToDP as hp,
-} from "../utils";
+import { heightPercentageToDP as hp } from "../utils";
 import {
   ACCOUNT_OVERVIEW_SCREEN,
   ACCOUNT_OVERVIEW_STACK_SCREEN,
   ADD_GOAL_SCREEN,
   AI_SCREEN,
   ALL_GOAL_SCREEN,
+  BILL_MANAGEMENT_SCREEN,
   FIND_YOUR_BANK_SCREEN,
   GOAL_DETAILS_SCREEN,
   HOME_SCREEN,
@@ -53,7 +52,7 @@ import TaxInfoScreen from "../screens/TaxInfoScreen";
 import TaxPreviewScreen from "../screens/TaxPreviewScreen";
 import TransactionsHistory from "../screens/TransactionsHistory";
 import TransactionHistory1 from "../screens/TransactionHistory1";
-
+import BillManagement from "../screens/BillManagement";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -120,6 +119,11 @@ const HomeStackScreen = () => (
       component={TransactionsHistory}
       options={{ headerShown: false }}
     />
+    <Stack.Screen
+      name={BILL_MANAGEMENT_SCREEN}
+      component={BillManagement}
+      options={{headerShown: false}}
+    />
   </Stack.Navigator>
 );
 
@@ -158,6 +162,7 @@ const BottomTabNavigator = () => {
       SEARCH_INVESTMENT,
       INVESTMENT_DETAILS,
       TRANSSACTION_HISTORY,
+      BILL_MANAGEMENT_SCREEN
     ];
     const hidden = hiddenRoutes.includes(focusedRoute);
 
@@ -175,10 +180,10 @@ const BottomTabNavigator = () => {
         route.name === HOME_STACK_SCREEN
           ? "Home"
           : route.name === ACCOUNT_OVERVIEW_STACK_SCREEN
-            ? "Chart"
-            : route?.name === AI_SCREEN
-              ? "Goals"
-              : "More",
+          ? "Chart"
+          : route?.name === AI_SCREEN
+          ? "Goals"
+          : "More",
       tabBarIcon: ({ color, size }) => {
         switch (route.name) {
           case HOME_STACK_SCREEN:

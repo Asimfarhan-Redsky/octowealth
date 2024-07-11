@@ -68,6 +68,7 @@ const InvestmentDetails = ({ navigation, route }) => {
         headerText={SELECT_INVESTMENT}
         headerTextStyle={styles.headerTextStyle}
         navigation={navigation}
+        arrowType={true}
       />
       <View
         style={[

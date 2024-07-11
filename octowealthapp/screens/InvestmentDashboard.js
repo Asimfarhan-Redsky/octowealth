@@ -12,6 +12,7 @@ import {
   royalBlue,
   lawnGreen,
   lightCyan,
+  CrimsonRed,
 } from "../constants/colors";
 import {
   ADD_INVESMENTS,
@@ -54,6 +55,18 @@ const months = [
   { year: 2024, month: "Dec" },
 ];
 
+const barLabels = ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Oct"];
+const barColors = [
+  () => royalBlue,
+  () => royalBlue,
+  () => royalBlue,
+  () => CrimsonRed,
+  () => CrimsonRed,
+  () => royalBlue,
+  () => royalBlue,
+];
+const barData = [500, 700, 1250, 1000, 2000, 1100, 1600];
+
 const InvestmentDashboard = ({ navigation }) => {
   const [activeMonth, setActiveMonth] = useState("Jan");
   const { portfolio } = useContext(InvestmentContext);
@@ -82,12 +95,20 @@ const InvestmentDashboard = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
         />
       </View>
-      <ScrollView contentContainerStyle={[styles.scrollViewContainer]} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={[styles.scrollViewContainer]}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.container}>
           <View
             style={[styles.chartContainer, width100Percent, alignItemsCenter]}
           >
-            <InvestmentBarChart />
+            <InvestmentBarChart
+              labels={barLabels}
+              colors={barColors}
+              data={barData}
+              bgColor={lightGrayColor}
+            />
             <Button
               buttonText={ADD_INVESMENTS}
               buttonStyle={styles.buttonStyle}
