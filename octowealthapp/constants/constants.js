@@ -8,7 +8,6 @@ import {
 
 // ScreensName
 const testing = "";
-export const WELCOME_SCREEN = "Welcome";
 export const LOGIN_SCREEN = "Login";
 export const SIGNUP_SCREEN = "SignUp";
 export const EXPENCE_INTRO_SCREEN = "ExpenceFlowIntro";
