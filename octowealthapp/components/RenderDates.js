@@ -41,7 +41,7 @@ const RenderDates = ({ setShowDate }) => {
     for (let d = start; d <= end; d.setDate(d.getDate() + 1)) {
       const dayOfWeek = days[d.getDay()];
       const dayOfMonth = d.getDate();
-      const month = months[d.getMonth()];
+      let month = months[d.getMonth()];
       const year = d.getFullYear();
       daysDetails.push({
         dayOfWeek: dayOfWeek,
@@ -55,14 +55,34 @@ const RenderDates = ({ setShowDate }) => {
   }, []);
 
   const dates = useMemo(() => {
-    const startDate = "2024-07-09";
-    const endDate = "2024-08-09";
+    const currentDate = new Date();
+    let year = currentDate?.getFullYear();
+    let month = currentDate?.getMonth() + 1;
+    let day = currentDate?.getDate();
+    const hour = currentDate.getHours();
+
+    const formateDate = (year, month, day) => {
+      const paddedMonth = month < 10 ? `0${month}` : month;
+      const paddedDay = day < 10 ? `0${day}` : day;
+      return `${year}-${paddedMonth}-${paddedDay}`;
+    };
+
+    const startDate = formateDate(year, month, day);
+
+    if (month == 12 && day == 31 && hour === 0) {
+      year = year + 1;
+      month = 1;
+      day = 1;
+    }
+
+    const endDate = formateDate(year, month + 1, day);
+
     return getDaysDetails(startDate, endDate);
   }, [getDaysDetails]);
 
   useEffect(() => {
     const currentDate = dates.find(
-      (date) => date.dayOfMonth == new Date().getDate()
+      (date) => date.dayOfMonth == new Date().getDate(),
     );
     setShowDate(currentDate.fullDate);
     setSelectedDate(currentDate?.dayOfMonth);

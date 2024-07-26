@@ -16,7 +16,7 @@ import {
   getCurrentDate,
 } from "../utils";
 import {
-  blackColor,
+  blackColor, 
   filterBtnColor,
   investmentIconColor,
   lightGreenColor,
@@ -27,6 +27,7 @@ import {
   DarkBlue,
   SkyBlue,
   charcolColor,
+  lightSkyBlue,
 } from "../constants/colors";
 import {
   EXPENSE,
@@ -159,8 +160,8 @@ const TransactionsHistory = ({ navigation, route }) => {
           }}
           hideExtraDays={true}
           theme={{
-            backgroundColor: SkyBlue,
-            calendarBackground: SkyBlue,
+            backgroundColor: lightSkyBlue,
+            calendarBackground: lightSkyBlue,
             textSectionTitleColor: whiteColor,
             selectedDayBackgroundColor: redColor,
             selectedDayTextColor: whiteColor,

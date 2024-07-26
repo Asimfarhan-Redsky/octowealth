@@ -38,5 +38,7 @@ export const DarkBlue ="rgba(20, 52, 203,1)";
 export const lightPinkColor = '#D16B81';
 export const purpleColor = '#7974D0';
 export const lightGreenColor="#7deb34";
+export const silver = "#B1B1B1";
+export const oceanBlue = "#3833B7";
 
 

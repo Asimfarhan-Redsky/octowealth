@@ -167,11 +167,8 @@ export const TRANSACTIONS = 'Transactions';
 export const BUDGET_ANALYSIS = 'Budget Analysis';
 export const SEE_ALL = 'See All';
 export const BILL_MANAGEMENT = "Bill Management";
-
-
-
-
-
+export const MARK_AS_COMPLETE = "Mark As Complete";
+export const UPCOMING_BILLS = "Upcoming Bills";
 
 
 export const EXPENCE_INTRO = [
