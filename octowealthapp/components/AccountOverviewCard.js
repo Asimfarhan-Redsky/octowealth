@@ -45,7 +45,7 @@ const AccountOverviewCard = ({
           style={[
             style.fontSizeNormal2x,
             style.fontWeightMedium,
-            { color: black70 },
+            { color: black70},
           ]}
         >
           {cardHeading}

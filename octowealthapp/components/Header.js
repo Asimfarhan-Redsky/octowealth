@@ -40,8 +40,8 @@ const Header = ({
   buttonIconColor,
   headerTextStyle,
   arrowIconColor,
+  arrowType
 }) => {
-
   return (
       <View
         style={[
@@ -52,7 +52,7 @@ const Header = ({
         ]}
       >
         <AntDesign
-          name={headerText === SELECT_INVESTMENT ? "left" : "arrowleft"}
+          name={arrowType ? "left" : "arrowleft"}
           size={28}
           color={arrowIconColor && arrowIconColor}
           onPress={() => {

@@ -10,13 +10,15 @@ import InvestmentProvider from "./context/InvestmentProvider";
 import { Platform, SafeAreaView, StatusBar } from 'react-native'
 import { backgroundColor } from "./constants/colors";
 
+
 Amplify.configure(awsConfig);
 
 function App() {
   useEffect(() => {
     StatusBar?.setBarStyle('dark-content')
     // StatusBar?.setBackgroundColor(backgroundColor)
-  }, [])
+  }, []);
+  
   return (
     <Provider store={store}>
       <InvestmentProvider>

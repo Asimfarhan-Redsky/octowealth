@@ -46,6 +46,7 @@ const DueBills = ({
 
   return (
     <TouchableOpacity
+    activeOpacity={0.9}
       style={[
         containerStyle ? containerStyle : styles.dueBillBox,
         dueBillStyles?.[0]?.alignItemsStart || alignItemsCenter,
@@ -105,7 +106,7 @@ const DueBills = ({
           </Text>
         </View>
       </View>
-      <View style={{ gap: wp(1) }}>
+      <View style={{ gap: wp(1)}}>
         <Text
           style={[
             dueBillStyles?.[1]?.billAmntColor || style.fontSizeNormal1x,
